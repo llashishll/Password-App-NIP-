@@ -3,19 +3,32 @@ const btn = document.querySelector(".btn")
 const pass = document.querySelector(".pass")
 const output = document.querySelector(".output-txt")
 
-btn.addEventListener("click", () => {
+pass.addEventListener("keyup", () => {
 
-    let passLength = pass.value.length
-    if (passLength == 0 || input.value.length == 0) {
+    if (pass.value.length < 10) {
 
-        output.style.color = "red"
-        output.innerHTML = "Either Username or Password Field is  "
+        pass.style.backgroundColor = "red"
 
-    } else if (passLength < 10 && input.value.length != 0) {
-        output.style.color = "red"
-        output.innerHTML = "Password length should be at least 10 characters"
-    } else if (passLength >= 10) {
-        output.style.color = "green"
-        output.innerHTML = "You are logged in."
+    } else {
+         pass.style.backgroundColor = "green"
+
     }
+
 })
+
+// btn.addEventListener("click", () => {
+
+//     let passLength = pass.value.length
+//     if (passLength == 0 || input.value.length == 0) {
+
+//         output.style.color = "red"
+//         output.innerHTML = "Either Username or Password Field is  "
+
+//     } else if (passLength < 10 && input.value.length != 0) {
+//         input.style.color = "red"
+//         output.innerHTML = "Password length should be at least 10 characters"
+//     } else if (passLength >= 10) {
+//         output.style.color = "green"
+//         output.innerHTML = "You are logged in."
+//     }
+// })
